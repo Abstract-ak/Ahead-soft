@@ -1,7 +1,7 @@
-import React, { useState, useRef, useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
-import PropertyCard from './PropertyCard';
+import React, { useState, useRef, useEffect } from "react";
+import PropTypes from "prop-types";
+import { ChevronLeft, ChevronRight } from "lucide-react";
+import PropertyCard from "./PropertyCard";
 
 const PropertyCarousel = ({ properties }) => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -22,8 +22,8 @@ const PropertyCarousel = ({ properties }) => {
     };
 
     updateVisibleCount();
-    window.addEventListener('resize', updateVisibleCount);
-    return () => window.removeEventListener('resize', updateVisibleCount);
+    window.addEventListener("resize", updateVisibleCount);
+    return () => window.removeEventListener("resize", updateVisibleCount);
   }, []);
 
   const nextSlide = () => {
