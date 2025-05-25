@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
-import { Heart, ChevronLeft, ChevronRight } from 'lucide-react';
+import React, { useState } from "react";
+import PropTypes from "prop-types";
+import { Heart, ChevronLeft, ChevronRight } from "lucide-react";
 import { FaLocationDot } from "react-icons/fa6";
 import { AiOutlineSwap } from "react-icons/ai";
 import { MdPhotoSizeSelectActual } from "react-icons/md";
@@ -71,7 +71,9 @@ const PropertyCard = ({ property }) => {
           {property.images.map((_, index) => (
             <div
               key={index}
-              className={`w-1.5 h-1.5 rounded-full ${index === currentImageIndex ? 'bg-white' : 'bg-white/50'}`}
+              className={`w-1.5 h-1.5 rounded-full ${
+                index === currentImageIndex ? "bg-white" : "bg-white/50"
+              }`}
             />
           ))}
         </div>
@@ -90,7 +92,9 @@ const PropertyCard = ({ property }) => {
 
           <div className="flex flex-col items-start">
             <div className="text-gray-600">{property.area} sq.ft</div>
-            <div className="text-xs text-gray-500 mt-1">Super Built-up Area</div>
+            <div className="text-xs text-gray-500 mt-1">
+              Super Built-up Area
+            </div>
           </div>
         </div>
 
@@ -104,13 +108,15 @@ const PropertyCard = ({ property }) => {
 
         <div className="flex items-center mt-3">
           <div className="w-6 h-6 bg-gray-200 flex items-center justify-center text-xs">
-            {property.agent.avatar || '👤'}
+            {property.agent.avatar || "👤"}
           </div>
           <div className="ml-2">
             <div className="text-xs text-gray-600">
               {property.agent.name} • {property.agent.timeAgo} ago
             </div>
-            <div className="text-xs text-gray-600">{property.agent.company}</div>
+            <div className="text-xs text-gray-600">
+              {property.agent.company}
+            </div>
           </div>
         </div>
 
@@ -126,9 +132,15 @@ const PropertyCard = ({ property }) => {
             <button
               onClick={toggleFavorite}
               className="p-1.5 rounded-full hover:bg-gray-100"
-              aria-label={isFavorite ? "Remove from favorites" : "Add to favorites"}
+              aria-label={
+                isFavorite ? "Remove from favorites" : "Add to favorites"
+              }
             >
-              <Heart className={`w-4 h-4 ${isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-600'}`} />
+              <Heart
+                className={`w-4 h-4 ${
+                  isFavorite ? "fill-red-500 text-red-500" : "text-gray-600"
+                }`}
+              />
             </button>
 
             <button
@@ -159,9 +171,9 @@ PropertyCard.propTypes = {
       name: PropTypes.string.isRequired,
       timeAgo: PropTypes.string.isRequired,
       company: PropTypes.string.isRequired,
-      avatar: PropTypes.string
-    }).isRequired
-  }).isRequired
+      avatar: PropTypes.string,
+    }).isRequired,
+  }).isRequired,
 };
 
 export default PropertyCard;

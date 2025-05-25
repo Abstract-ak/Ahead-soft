@@ -1,23 +1,25 @@
-import React, { useState } from 'react';
-import LocationFilter from './LocationFilter';
-import PropertyCarousel from './PropertyCarousel';
-import { propertyData } from '../data/propertyData';
+import React, { useState } from "react";
+import LocationFilter from "./LocationFilter";
+import PropertyCarousel from "./PropertyCarousel";
+import { propertyData } from "../data/propertyData";
 
 const PropertyListing = () => {
-  const [activeLocation, setActiveLocation] = useState('Dubai');
+  const [activeLocation, setActiveLocation] = useState("Dubai");
 
   // Filter properties based on selected location
-  const filteredProperties =
-    [ 'Sharjah', 'Abu Dhabi', 'Dubai'].includes(activeLocation)
-      ? propertyData
-      : propertyData.filter(
-          (property) =>
-            property.location.trim().toLowerCase() === activeLocation.trim().toLowerCase()
-        );
+  const filteredProperties = ["Sharjah", "Abu Dhabi", "Dubai"].includes(
+    activeLocation
+  )
+    ? propertyData
+    : propertyData.filter(
+        (property) =>
+          property.location.trim().toLowerCase() ===
+          activeLocation.trim().toLowerCase()
+      );
 
   return (
     <div>
-      <LocationFilter 
+      <LocationFilter
         activeLocation={activeLocation}
         onLocationChange={setActiveLocation}
       />
@@ -32,7 +34,9 @@ const PropertyListing = () => {
               alt="Not Found"
               className="w-50 h-50 mb-6"
             />
-            <p className="text-sm">No properties were found matching your criteria.</p>
+            <p className="text-sm">
+              No properties were found matching your criteria.
+            </p>
           </div>
         )}
       </div>
