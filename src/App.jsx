@@ -1,10 +1,12 @@
 import React from "react";
 import PropertyListing from "./components/PropertyListing";
 import FeatureCards from "./components/FeatureCards";
+import LandingHero from "./components/LandingHero";
 
 function App() {
   return (
     <>
+      <LandingHero />
       <div className="bg-slate-50 px-4 py-6">
         <FeatureCards />
       </div>
