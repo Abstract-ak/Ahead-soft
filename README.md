@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React.js Developer Assessment Instructions
 
 ## Prerequisites
@@ -45,3 +46,13 @@ For the empty state, refer to:
 ![Landing Page - No Result](mockups/Landing%20Page%20-%20No%20Result.png)
 
 ---
+=======
+
+
+
+
+
+
+
+
+>>>>>>> Anurag
