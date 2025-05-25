@@ -1,16 +1,47 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import LocationFilter from "./LocationFilter";
 import PropertyCarousel from "./PropertyCarousel";
 import { propertyData } from "../data/propertyData";
 
 const PropertyListing = () => {
   const [activeLocation, setActiveLocation] = useState("Dubai");
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProperties = async () => {
+      setLoading(true);
+      setError(null);
+      try {
+        const response = await fetch(
+          "https://staging.thunderscript.com/api/properties"
+        );
+        if (!response.ok) throw new Error("Failed to fetch properties");
+        const data = await response.json();
+        console.log("Fetched properties:", data);
+        // setProperties(data?.data || []);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProperties();
+  }, []);
 
   // Filter properties based on selected location
   const filteredProperties = ["Sharjah", "Abu Dhabi", "Dubai"].includes(
     activeLocation
   )
-    ? propertyData
+    ? // ? properties
+      //   : properties.filter(
+      //       (property) =>
+      //         property.location?.trim().toLowerCase() ===
+      //         activeLocation.trim().toLowerCase()
+      //     );
+
+      propertyData
     : propertyData.filter(
         (property) =>
           property.location.trim().toLowerCase() ===
