@@ -1,6 +1,6 @@
-import React from 'react';
-import PropertyListing from './components/PropertyListing';
-import FeatureCards from './components/FeatureCards';
+import React from "react";
+import PropertyListing from "./components/PropertyListing";
+import FeatureCards from "./components/FeatureCards";
 
 function App() {
   return (
