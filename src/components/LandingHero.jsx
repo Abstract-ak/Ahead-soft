@@ -11,7 +11,7 @@ const LandingHero = () => {
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url(/francesca-tosolini-Pt0BM3bRs8M-unsplash.jpg)",
+          backgroundImage: `url(${import.meta.env.BASE_URL}francesca-tosolini-Pt0BM3bRs8M-unsplash.jpg)`,
           filter: "brightness(0.8)",
         }}
       />
